@@ -1,8 +1,8 @@
 package session
 
 import (
-	"github.com/VedrLabs/go_IEC104/protocol"
-	"github.com/VedrLabs/go_IEC104/protocol/ASDU"
+	"github.com/vedrlabs/go-iec104/protocol"
+	"github.com/vedrlabs/go-iec104/protocol/ASDU"
 )
 
 // NoopMessageHandler MessageHandler 的空实现，可嵌入后只覆盖关心的方法。

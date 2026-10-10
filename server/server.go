@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/VedrLabs/go_IEC104/protocol"
-	"github.com/VedrLabs/go_IEC104/session"
+	"github.com/vedrlabs/go-iec104/protocol"
+	"github.com/vedrlabs/go-iec104/session"
 )
 
 const twoSize = 2

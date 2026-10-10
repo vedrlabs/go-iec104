@@ -20,7 +20,7 @@ A Go library for **IEC 104** .
 ### 安装
 
 ```bash
-go get github.com/VedrLabs/go_IEC104
+go get github.com/vedrbabs/go_iec104
 ```
 
 要求：Go 1.25+（以 `go.mod` 为准）。

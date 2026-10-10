@@ -4,8 +4,8 @@ import (
 	"encoding/binary"
 	"fmt"
 
-	"github.com/VedrLabs/go_IEC104/protocol/object"
-	"github.com/VedrLabs/go_IEC104/read_buf"
+	"github.com/vedrlabs/go-iec104/protocol/object"
+	"github.com/vedrlabs/go-iec104/read_buf"
 )
 
 // 遍历辅助结构体

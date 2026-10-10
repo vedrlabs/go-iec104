@@ -3,8 +3,8 @@ package ASDU
 import (
 	"time"
 
-	"github.com/VedrLabs/go_IEC104/protocol/object"
-	"github.com/VedrLabs/go_IEC104/read_buf"
+	"github.com/vedrlabs/go-iec104/protocol/object"
+	"github.com/vedrlabs/go-iec104/read_buf"
 )
 
 func init() {

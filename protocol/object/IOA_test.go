@@ -4,7 +4,7 @@ import (
 	"encoding/binary"
 	"testing"
 
-	"github.com/VedrLabs/go_IEC104/read_buf"
+	"github.com/vedrlabs/go-iec104/read_buf"
 )
 
 func TestBuildIOARoundTripLE3(t *testing.T) {

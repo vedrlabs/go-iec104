@@ -3,7 +3,7 @@ package session
 import (
 	"errors"
 
-	"github.com/VedrLabs/go_IEC104/protocol"
+	"github.com/vedrlabs/go-iec104/protocol"
 )
 
 // ParamVehicle 入handler的参数

@@ -7,8 +7,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/VedrLabs/go_IEC104/protocol/ASDU"
-	"github.com/VedrLabs/go_IEC104/read_buf"
+	"github.com/vedrlabs/go-iec104/protocol/ASDU"
+	"github.com/vedrlabs/go-iec104/read_buf"
 )
 
 const (

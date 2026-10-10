@@ -5,7 +5,7 @@ import (
 	"encoding/binary"
 	"errors"
 
-	"github.com/VedrLabs/go_IEC104/protocol/ASDU"
+	"github.com/vedrlabs/go-iec104/protocol/ASDU"
 )
 
 const maxNumber = 127 //可变结构限定词中的数目的最大值

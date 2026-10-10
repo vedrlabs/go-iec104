@@ -4,7 +4,7 @@ import (
 	"encoding/binary"
 	"fmt"
 
-	"github.com/VedrLabs/go_IEC104/read_buf"
+	"github.com/vedrlabs/go-iec104/read_buf"
 )
 
 var _ Objector = (*CP16Time2a)(nil)

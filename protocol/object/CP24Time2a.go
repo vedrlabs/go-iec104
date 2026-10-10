@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/VedrLabs/go_IEC104/read_buf"
+	"github.com/vedrlabs/go-iec104/read_buf"
 )
 
 var _ Objector = (*CP24Time2a)(nil)

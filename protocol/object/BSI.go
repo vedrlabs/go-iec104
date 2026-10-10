@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/VedrLabs/go_IEC104/read_buf"
+	"github.com/vedrlabs/go-iec104/read_buf"
 )
 
 var _ Objector = (*BSI)(nil)

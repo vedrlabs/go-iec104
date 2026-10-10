@@ -3,7 +3,7 @@ package protocol
 import (
 	"encoding/binary"
 
-	"github.com/VedrLabs/go_IEC104/protocol/ASDU"
+	"github.com/vedrlabs/go-iec104/protocol/ASDU"
 )
 
 // FrameCtx 编码上下文
