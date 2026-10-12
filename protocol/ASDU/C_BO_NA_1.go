@@ -51,6 +51,13 @@ func (c *C_BO_NA_1) model() []object.Objector {
 }
 
 func (c *C_BO_NA_1) ObtainNext() (*object.IOA, *object.BSI) {
-	index := c.index()
-	return c.ioaSlice[index], c.bsiSlice[index]
+	ioa, bsi, _ := c.ObtainItem(c.index())
+	return ioa, bsi
+}
+
+func (c *C_BO_NA_1) ObtainItem(index byte) (*object.IOA, *object.BSI, error) {
+	if err := c.checkIndex(index); err != nil {
+		return nil, nil, err
+	}
+	return c.ioaSlice[index], c.bsiSlice[index], nil
 }

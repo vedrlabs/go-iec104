@@ -61,6 +61,13 @@ func (m *M_ME_TB_1) model() []object.Objector {
 }
 
 func (m *M_ME_TB_1) ObtainNext() (*object.IOA, *object.SVA, *object.QDS, *object.CP24Time2a) {
-	index := m.index()
-	return m.ioaSlice[index], m.svaSlice[index], m.qdsSlice[index], m.tsSlice[index]
+	ioa, sva, qds, ts, _ := m.ObtainItem(m.index())
+	return ioa, sva, qds, ts
+}
+
+func (m *M_ME_TB_1) ObtainItem(index byte) (*object.IOA, *object.SVA, *object.QDS, *object.CP24Time2a, error) {
+	if err := m.checkIndex(index); err != nil {
+		return nil, nil, nil, nil, err
+	}
+	return m.ioaSlice[index], m.svaSlice[index], m.qdsSlice[index], m.tsSlice[index], nil
 }

@@ -98,6 +98,13 @@ func (f *F_SG_NA_1) model() []object.Objector {
 }
 
 func (f *F_SG_NA_1) ObtainNext() (*object.IOA, *object.NOF, *object.NOS, *object.LOS, *object.SEG) {
-	index := f.index()
-	return f.ioaSlice[index], f.nofSlice[index], f.nosSlice[index], f.losSlice[index], f.segSlice[index]
+	ioa, nof, nos, los, seg, _ := f.ObtainItem(f.index())
+	return ioa, nof, nos, los, seg
+}
+
+func (f *F_SG_NA_1) ObtainItem(index byte) (*object.IOA, *object.NOF, *object.NOS, *object.LOS, *object.SEG, error) {
+	if err := f.checkIndex(index); err != nil {
+		return nil, nil, nil, nil, nil, err
+	}
+	return f.ioaSlice[index], f.nofSlice[index], f.nosSlice[index], f.losSlice[index], f.segSlice[index], nil
 }

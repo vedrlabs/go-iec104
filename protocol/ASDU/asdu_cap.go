@@ -40,6 +40,15 @@ func (n *asduCap) index() byte {
 	return i
 }
 
+// checkIndex 校验信息对象索引是否越界
+func (n *asduCap) checkIndex(index byte) error {
+	length := n.Length()
+	if index >= length {
+		return fmt.Errorf("index %d out of range [0,%d)", index, length)
+	}
+	return nil
+}
+
 // ErrSequentialInfoElements 不允许顺序的信息元素格式
 // 当ASDU要求使用顺序格式（Sequential Format）但实际收到或需要处理离散格式时返回
 func (n *asduCap) ErrSequentialInfoElements(asduType string) error {

@@ -64,6 +64,13 @@ func (f *F_DR_TA_1) model() []object.Objector {
 }
 
 func (f *F_DR_TA_1) ObtainNext() (*object.IOA, *object.NOF, *object.LOF, *object.SOF, *object.CP56Time2a) {
-	index := f.index()
-	return f.ioaSlice[index], f.nofSlice[index], f.lofSlice[index], f.sofSlice[index], f.tsSlice[index]
+	ioa, nof, lof, sof, ts, _ := f.ObtainItem(f.index())
+	return ioa, nof, lof, sof, ts
+}
+
+func (f *F_DR_TA_1) ObtainItem(index byte) (*object.IOA, *object.NOF, *object.LOF, *object.SOF, *object.CP56Time2a, error) {
+	if err := f.checkIndex(index); err != nil {
+		return nil, nil, nil, nil, nil, err
+	}
+	return f.ioaSlice[index], f.nofSlice[index], f.lofSlice[index], f.sofSlice[index], f.tsSlice[index], nil
 }

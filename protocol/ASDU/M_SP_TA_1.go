@@ -59,6 +59,13 @@ func (m *M_SP_TA_1) BindItem(addr uint32, spi byte, bl byte, sb byte, nt byte, i
 
 // ObtainNext 获取数据
 func (m *M_SP_TA_1) ObtainNext() (*object.IOA, *object.SIQ, *object.CP24Time2a) {
-	index := m.index()
-	return m.ioaSlice[index], m.siqSlice[index], m.tsSlice[index]
+	ioa, siq, ts, _ := m.ObtainItem(m.index())
+	return ioa, siq, ts
+}
+
+func (m *M_SP_TA_1) ObtainItem(index byte) (*object.IOA, *object.SIQ, *object.CP24Time2a, error) {
+	if err := m.checkIndex(index); err != nil {
+		return nil, nil, nil, err
+	}
+	return m.ioaSlice[index], m.siqSlice[index], m.tsSlice[index], nil
 }

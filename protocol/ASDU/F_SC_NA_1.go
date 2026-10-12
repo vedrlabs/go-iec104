@@ -59,6 +59,13 @@ func (f *F_SC_NA_1) model() []object.Objector {
 }
 
 func (f *F_SC_NA_1) ObtainNext() (*object.IOA, *object.NOF, *object.NOS, *object.SCQ) {
-	index := f.index()
-	return f.ioaSlice[index], f.nofSlice[index], f.nosSlice[index], f.scqSlice[index]
+	ioa, nof, nos, scq, _ := f.ObtainItem(f.index())
+	return ioa, nof, nos, scq
+}
+
+func (f *F_SC_NA_1) ObtainItem(index byte) (*object.IOA, *object.NOF, *object.NOS, *object.SCQ, error) {
+	if err := f.checkIndex(index); err != nil {
+		return nil, nil, nil, nil, err
+	}
+	return f.ioaSlice[index], f.nofSlice[index], f.nosSlice[index], f.scqSlice[index], nil
 }

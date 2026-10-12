@@ -61,6 +61,13 @@ func (m *M_EP_TA_1) model() []object.Objector {
 }
 
 func (m *M_EP_TA_1) ObtainNext() (*object.IOA, *object.SEP, *object.CP16Time2a, *object.CP24Time2a) {
-	index := m.index()
-	return m.ioaSlice[index], m.sepSlice[index], m.elapsedSlice[index], m.tsSlice[index]
+	ioa, sep, elapsed, ts, _ := m.ObtainItem(m.index())
+	return ioa, sep, elapsed, ts
+}
+
+func (m *M_EP_TA_1) ObtainItem(index byte) (*object.IOA, *object.SEP, *object.CP16Time2a, *object.CP24Time2a, error) {
+	if err := m.checkIndex(index); err != nil {
+		return nil, nil, nil, nil, err
+	}
+	return m.ioaSlice[index], m.sepSlice[index], m.elapsedSlice[index], m.tsSlice[index], nil
 }

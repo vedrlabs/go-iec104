@@ -57,6 +57,13 @@ func (c *C_SC_TA_1) model() []object.Objector {
 }
 
 func (c *C_SC_TA_1) ObtainNext() (*object.IOA, *object.SCO, *object.CP56Time2a) {
-	index := c.index()
-	return c.ioaSlice[index], c.scoSlice[index], c.tsSlice[index]
+	ioa, sco, ts, _ := c.ObtainItem(c.index())
+	return ioa, sco, ts
+}
+
+func (c *C_SC_TA_1) ObtainItem(index byte) (*object.IOA, *object.SCO, *object.CP56Time2a, error) {
+	if err := c.checkIndex(index); err != nil {
+		return nil, nil, nil, err
+	}
+	return c.ioaSlice[index], c.scoSlice[index], c.tsSlice[index], nil
 }

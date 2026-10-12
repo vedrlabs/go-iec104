@@ -53,6 +53,13 @@ func (m *M_SP_NA_1) model() []object.Objector {
 
 // ObtainNext 和next方法配合遍历数据
 func (m *M_SP_NA_1) ObtainNext() (*object.IOA, *object.SIQ) {
-	index := m.index()
-	return m.ioaSlice[index], m.siqSlice[index]
+	ioa, siq, _ := m.ObtainItem(m.index())
+	return ioa, siq
+}
+
+func (m *M_SP_NA_1) ObtainItem(index byte) (*object.IOA, *object.SIQ, error) {
+	if err := m.checkIndex(index); err != nil {
+		return nil, nil, err
+	}
+	return m.ioaSlice[index], m.siqSlice[index], nil
 }
